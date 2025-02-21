@@ -1,0 +1,36 @@
+node_modules
+
+# Output
+.output
+.vercel
+.netlify
+.wrangler
+/.svelte-kit
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Env
+.env
+.env.*
+!.env.example
+!.env.test
+
+# Vite
+vite.config.js.timestamp-*
+vite.config.ts.timestamp-*
+
+node_modules
+
+.pnpm-store
+
+# PROD ONLY
+*
+!build/
+!package.json
+!package-lock.json
+!docker-compose.prod.yaml
+!Dockerfile.prod
+!.gitignore
+!README.md
