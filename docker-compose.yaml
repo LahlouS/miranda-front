@@ -1,0 +1,17 @@
+services:
+  miranda:
+    restart: on-failure
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    container_name: miranda-container
+    ports:
+      - 3000:3000
+    environment:
+      - VITE_API_BASE_URL=http://host.docker.internal:8000
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    volumes:
+      - ./:/app
+      - /app/node_modules
+

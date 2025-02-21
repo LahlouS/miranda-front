@@ -1,0 +1,13 @@
+services:
+  miranda-prod:
+    restart: on-failure
+    build:
+      context: ./
+      dockerfile: Dockerfile.prod
+    container_name: miranda-container-prod
+    ports:
+      - 3000:3000
+    environment:
+      - VITE_API_BASE_URL=http://host.docker.internal:8000
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
