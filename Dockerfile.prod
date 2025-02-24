@@ -3,7 +3,7 @@ FROM node:20
 
 # environment variable to dl all the dev tools node need
 ENV NODE_ENV=production
-ENV PUBLIC_BASE_URL=http://0.0.0.0:3000
+ENV PUBLIC_BASE_URL=http://localhost:3000
 # Create a non-root user and group
 
 WORKDIR /app
