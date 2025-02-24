@@ -1,0 +1,11 @@
+FROM	nginx:latest
+
+
+ARG NGINX_PORT
+ENV PORT=${NGINX_PORT}
+
+COPY ./nginx/nginx.http.conf /etc/nginx/nginx.conf
+
+EXPOSE $PORT
+
+ENTRYPOINT [ "nginx", "-g", "daemon off;" ]
