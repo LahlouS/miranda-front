@@ -34,3 +34,4 @@ node_modules
 !Dockerfile.prod
 !.gitignore
 !README.md
+!nginx
