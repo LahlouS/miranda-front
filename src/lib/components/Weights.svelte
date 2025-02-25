@@ -141,18 +141,5 @@
       margin-top: 30px;
     }
   
-    .save-button {
-      font-size: 1.25rem;
-      padding: 12px 24px;
-      border-radius: 8px;
-      border: none;
-      cursor: pointer;
-      transition: background-color 0.3s, transform 0.3s;
-    }
-  
-    .save-button:hover {
-      background-color: #45a049;
-      transform: scale(1.05);
-    }
   </style>
   

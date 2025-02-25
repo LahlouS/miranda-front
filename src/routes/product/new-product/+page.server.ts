@@ -1,5 +1,5 @@
 // +page.server.ts
-import type { Actions } from './$types';
+import type { Actions, PageServerLoad } from './$types';
 import { error, json } from '@sveltejs/kit';
 import { fail } from '@sveltejs/kit';
 import type { SendProduct } from '$lib/interfaces';
@@ -55,6 +55,23 @@ function validateProductTypes(input: string) {
 
 const simulateProcessing = async (ms: number = 3000) => {
     return new Promise(resolve => setTimeout(resolve, ms));
+};
+
+// Removing every engine in memory to prepare for heavy lifting
+export const load: PageServerLoad = async ( ) => {
+	try {
+		const runningEngineResponse = await fetch(`${API_BASE_URL}/engine/runningengines`)
+		const runningEngineList = await runningEngineResponse.json()
+		for (const delete_pid of runningEngineList.list_id) {
+			const deleteEngineResponse = await fetch(`${API_BASE_URL}/engine/${delete_pid}/kill`, { method: 'DELETE', })
+			if (!deleteEngineResponse.ok) {
+				throw error(deleteEngineResponse.status, `there has been a problem trying to delete in memory engine id:${delete_pid}`);
+			}
+		}
+		return { "status":"ok" }
+	} catch (err) {
+		throw error(500, `Error fetching products: ${err}`);
+	}
 };
 
 export const actions = {

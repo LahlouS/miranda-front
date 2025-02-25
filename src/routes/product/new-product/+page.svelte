@@ -2,6 +2,10 @@
     import { enhance, type SubmitFunction } from '$app/forms';
     import type { ActionData } from './$types';
     export let form: ActionData;
+
+    export let data: PageData;
+
+    // console.log('LALALALALALA ', data)
     
     let isSubmitting = false;
     let product_id = ''

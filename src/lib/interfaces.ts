@@ -22,8 +22,12 @@ type Product = {
 	gen_description: string[];
 	gen_tweets_pos: string[];
 	gen_tweets_neg: string[];
-
 }
+
+type IsRunning = {
+	isRunning: boolean
+}
+
 interface EngineStats {
 	pid: number;
 	n_users: number;
@@ -97,4 +101,5 @@ export type {	Weights,
 				UserRankingMaterial,
 				GetUserRankingMaterial,
 				GetUserValidation,
-				SendProduct };
+				SendProduct, 
+				IsRunning };

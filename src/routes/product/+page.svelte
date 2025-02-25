@@ -1,9 +1,9 @@
 <script lang="ts">
 	import type { PageData } from './$types';
-  import type { Product } from '$lib/interfaces';
+  import type { Product, IsRunning } from '$lib/interfaces';
 
 	export let data: PageData;
-    const products: Product[] = data.products
+  const products: (Product & IsRunning)[] = data.products
 
 </script>
 <!-- Page Title -->
@@ -27,7 +27,12 @@
     {#each products as product}
       <a href={`/product/explore/${product.pid}`} class="block">
         <div class="group rounded-lg shadow-lg p-6 bg-white hover:bg-gray-50 transition-transform duration-500 transform hover:scale-105 hover:shadow-2xl">
-          <h2 class="text-xl font-semibold text-gray-900">({product.pid}) {product.type}</h2>
+          <h2 class="text-xl font-semibold text-gray-900 flex items-center justify-between">
+            <span>({product.pid}) {product.type}</span>
+            {#if product.isRunning}
+              <span class="text-green-300">[running]</span>
+            {/if}
+          </h2>
           <p class="mt-2 text-gray-600">{product.description}</p>
     
           <!-- Likes Section -->
