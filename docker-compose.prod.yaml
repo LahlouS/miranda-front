@@ -5,11 +5,17 @@ services:
       context: ./
       dockerfile: ./nginx/Dockerfile.nginx
     ports:
-      - '8080:8080'
+      - '80:80'
+      - '443:443'
     depends_on:
       - miranda-prod
     networks:
       - miranda-network
+    volumes:
+      - /etc/letsencrypt/live/slahlou.tech:/etc/letsencrypt/live/slahlou.tech:ro
+      - /etc/letsencrypt/archive/slahlou.tech:/etc/letsencrypt/archive/slahlou.tech:ro
+      - /etc/letsencrypt/privkey.pem:/etc/letsencrypt/privkey.pem:ro
+      - /etc/letsencrypt/fullchain.pem:/etc/letsencrypt/fullchain.pem:ro
   miranda-prod:
     restart: on-failure
     build:
