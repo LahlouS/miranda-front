@@ -26,7 +26,7 @@ node_modules
 .pnpm-store
 
 # PROD ONLY
-*
+
 !build/
 !package.json
 !package-lock.json
