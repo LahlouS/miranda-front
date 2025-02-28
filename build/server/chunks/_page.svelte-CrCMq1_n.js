@@ -30,7 +30,7 @@ function _page($$payload, $$props) {
   pop_element();
   $$payload.out += ` <p class="mt-4 text-xl font-medium text-gray-900 svelte-39ds0">`;
   push_element($$payload, "p", 31, 6);
-  $$payload.out += `Influancer AI-powered search algorithm 🤍</p>`;
+  $$payload.out += `AI-powered influencer search algorithm 🤍</p>`;
   pop_element();
   $$payload.out += ` <div class="mt-10 flex justify-center space-x-4 border-b border-gray-200 relative z-10 svelte-39ds0">`;
   push_element($$payload, "div", 35, 6);
@@ -60,7 +60,7 @@ function _page($$payload, $$props) {
     pop_element();
     $$payload.out += ` <p class="text-gray-600 svelte-39ds0">`;
     push_element($$payload, "p", 61, 12);
-    $$payload.out += `Miranda AI generated content and retrieval technologies to match your product with influencers who align perfectly with your brand values and target audience. 
+    $$payload.out += `Miranda use AI generated content and retrieval technologies to match your products with influencers who align perfectly with your brand values and target audience. 
               Save time and maximize your marketing impact with precisely targeted ambassador recommendations.</p>`;
     pop_element();
     $$payload.out += `</div>`;
@@ -105,4 +105,4 @@ _page.render = function() {
 };
 
 export { _page as default };
-//# sourceMappingURL=_page.svelte-CJmb6b7l.js.map
+//# sourceMappingURL=_page.svelte-CrCMq1_n.js.map

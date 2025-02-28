@@ -29,7 +29,7 @@
       </h1>
 
       <p class="mt-4 text-xl font-medium text-gray-900">
-        Influancer AI-powered search algorithm 🤍
+        AI-powered influencer search algorithm 🤍
       </p>
       <!-- Tab Navigation - Added z-index and made buttons more explicitly interactive -->
       <div class="mt-10 flex justify-center space-x-4 border-b border-gray-200 relative z-10">
@@ -59,7 +59,7 @@
           <div class="space-y-4 text-left">
             <h2 class="text-2xl font-semibold text-gray-800">Find the perfect brand ambassador</h2>
             <p class="text-gray-600">
-              Miranda AI generated content and retrieval technologies to match your product with influencers who align perfectly with your brand values and target audience. 
+              Miranda use AI generated content and retrieval technologies to match your products with influencers who align perfectly with your brand values and target audience. 
               Save time and maximize your marketing impact with precisely targeted ambassador recommendations.
             </p>
           </div>
