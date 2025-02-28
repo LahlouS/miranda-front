@@ -62,7 +62,7 @@ async function fetchUsersData(usersScore: GetUserScoreValidation[], pid: number)
 
 export const GET: RequestHandler = async ({ url, params }) => {
 	const pid = params.pid
-	const userScoresResponse  = await fetch(`${API_BASE_URL}/engine/${pid}/userlist`); // TODO remove limit=1 it was for demo purpose
+	const userScoresResponse  = await fetch(`${API_BASE_URL}/engine/${pid}/userlist`);
 		if (!userScoresResponse.ok) {
 			throw error(userScoresResponse.status, `Failed to fetch recomended users for ${pid}`);
 		}
@@ -76,7 +76,7 @@ export const GET: RequestHandler = async ({ url, params }) => {
 export const POST: RequestHandler = async ({ request, params }) => {
 	const body = await request.formData();
 	const pid = params.pid;
-	
+
 	try {
 		// Convert form data to weights object
 		const weights: Weights = {
