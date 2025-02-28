@@ -170,12 +170,30 @@ const handleNewWeights = async () => {
 <div class="relative w-1/2 h-screen">
 	<!-- Users list container -->
 	<div class="h-full overflow-y-auto space-y-4">
-	  {#if loading.users == true}
-		<!-- Animated Loading Placeholder -->
-		<div class="flex items-center justify-center h-full">
-		  <div class="animate-spin rounded-full h-10 w-10 border-b-2 border-gray-500"></div>
-		  <p class="ml-3 text-gray-700 font-semibold">Loading users...</p>
-		</div>
+	  {#if loading.users == true || loading.engine == true}
+		  <!-- Animated Loading Placeholder -->
+		  {#if loading.engine == true}
+		  <div class="flex flex-col items-center justify-center h-full p-6 bg-gray-50 rounded-lg shadow-sm">
+			<div class="flex items-center justify-center mb-4">
+			  <div class="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-500"></div>
+			</div>
+			<div class="text-center space-y-2">
+			  <p class="text-gray-800 font-semibold text-lg">Instantiating recommendation engine</p>
+			  <div class="flex space-x-1 justify-center">
+				<span class="animate-bounce delay-75 h-2 w-2 bg-blue-500 rounded-full"></span>
+				<span class="animate-bounce delay-150 h-2 w-2 bg-blue-500 rounded-full"></span>
+				<span class="animate-bounce delay-300 h-2 w-2 bg-blue-500 rounded-full"></span>
+			  </div>
+			  <p class="text-gray-600">This may take 20-30 seconds</p>
+			  <p class="text-gray-500 text-sm italic">Once engine is running, loading will be much faster</p>
+			</div>
+		  </div>
+		{:else if loading.users == true}
+		  <div class="flex items-center justify-center h-full p-4 bg-gray-50 rounded-lg">
+			<div class="animate-spin rounded-full h-10 w-10 border-b-2 border-blue-500"></div>
+			<p class="ml-3 text-gray-700 font-semibold">Creating users list...</p>
+		  </div>
+		{/if}
 	  {:else if error}
 		<p class="text-red-500 text-center">{error}</p>
 	  {:else}
